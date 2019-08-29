@@ -1,7 +1,9 @@
 # News-Newspaper
 World News Newspaper
 ## News-Newspaper
-##
+## tools list :: 
+Java,MVVM Pattern,Retrofit,RxJava,Component Archeticture,Navigation,Paging
+-----
 World News provides a fast and an easy way to read the latest news from all around the world.
 Save your time by reading multiple news sources using one app.
 ★★★ Please rate the app if you like it.
