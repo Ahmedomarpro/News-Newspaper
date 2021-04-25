@@ -3,6 +3,9 @@ package com.newsapp.my_design_new;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.icu.text.SimpleDateFormat;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import org.ocpsoft.prettytime.PrettyTime;
 
@@ -30,6 +33,7 @@ public class Utils {
         return vibrantLightColorList[idx];
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public static String DateToTimeFormat(String oldstringDate){
         PrettyTime p = new PrettyTime(new Locale(getCountry()));
         String isTime = null;
@@ -45,9 +49,13 @@ public class Utils {
         return isTime;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public static String DateFormat(String oldstringDate){
         String newDate;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("E, d MMM yyyy", new Locale(getCountry()));
+        SimpleDateFormat dateFormat = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            dateFormat = new SimpleDateFormat("E, d MMM yyyy", new Locale(getCountry()));
+        }
         try {
             Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(oldstringDate);
             newDate = dateFormat.format(date);

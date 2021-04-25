@@ -59,7 +59,7 @@
                     android:scaleType="centerCrop"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    tools:ignore="ContentDescription" />
+                    tools:ignore="ContentDescription,NotSibling" />
 
             </RelativeLayout>
 

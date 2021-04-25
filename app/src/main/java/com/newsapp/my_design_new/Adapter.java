@@ -5,7 +5,10 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Build;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,6 +50,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         return new MyViewHolder(view, onItemClickListener);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @SuppressLint({"CheckResult", "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holders, int position) {
